@@ -151,3 +151,79 @@ while ($count -lt $NUMBER_OF_ACCOUNTS_TO_CREATE) {
 
 
 ##
+
+# Active Directory Account Lockout Lab
+
+This lab will walk you through simulating account lockouts in Active Directory, configuring lockout thresholds via Group Policy, enabling/disabling accounts, and reviewing relevant logs on both the Domain Controller and client VM.
+
+---
+
+## Prerequisites
+
+- **Azure Portal access** with VMs named `DC-1` (Domain Controller) and `Client-1` (Client Machine)
+- Both VMs must be connected to the same virtual network and domain
+
+---
+
+## 1. Start the Virtual Machines
+
+- Log into the **Azure Portal**
+- Ensure that both `DC-1` and `Client-1` VMs are running  
+  (Start them if they are stopped)
+
+---
+
+## 2. Simulate Account Lockouts
+
+1. Log into `DC-1`
+2. Identify or create a user account in Active Directory
+3. On `Client-1` (or any login prompt), attempt to log in to the chosen account **10 times** with an incorrect password
+
+---
+
+## 3. Configure Group Policy for Account Lockout Threshold
+
+1. On `DC-1`, open **Group Policy Management Console** (`gpmc.msc`)
+2. Edit the **Default Domain Policy** (or relevant GPO)
+3. Navigate to:  
+   `Computer Configuration` > `Policies` > `Windows Settings` > `Security Settings` > `Account Policies` > `Account Lockout Policy`
+4. Set **Account lockout threshold** to `5` invalid attempts
+5. Apply and update policy (`gpupdate /force`)
+
+---
+
+## 4. Test Account Lockout
+
+1. Attempt to log in to the same user account **6 times** with an incorrect password
+2. Observe that the account is now **locked out** in Active Directory Users and Computers
+
+---
+
+## 5. Unlock and Reset Account
+
+1. In Active Directory Users and Computers on `DC-1`, unlock the locked-out account
+2. Reset the password for the user account
+3. Attempt to log in with the new password
+
+---
+
+## 6. Enable and Disable Accounts
+
+1. **Disable** the same user account in Active Directory
+2. Attempt to log in as that user; observe the error message indicating the account is disabled
+3. **Re-enable** the account in Active Directory
+4. Attempt to log in again
+
+---
+
+## 7. Review Event Logs
+
+- On `DC-1` (Domain Controller):  
+  - Open **Event Viewer**  
+  - Review logs under `Windows Logs > Security` for account lockout and authentication events
+- On `Client-1`:  
+  - Open **Event Viewer**  
+  - Review logs under `Windows Logs > Security` for failed login attempts
+
+---
+
