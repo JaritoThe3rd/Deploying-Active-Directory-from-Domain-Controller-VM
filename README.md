@@ -190,6 +190,10 @@ This lab will walk you through simulating account lockouts in Active Directory, 
 4. Set **Account lockout threshold** to `5` invalid attempts
 5. Apply and update policy (`gpupdate /force`)
 
+
+https://github.com/user-attachments/assets/c8b84a46-e3b5-47bb-b988-8cef50150389
+
+
 ---
 
 ## 4. Test Account Lockout
@@ -213,6 +217,10 @@ This lab will walk you through simulating account lockouts in Active Directory, 
 2. Attempt to log in as that user; observe the error message indicating the account is disabled
 3. **Re-enable** the account in Active Directory
 4. Attempt to log in again
+
+
+https://github.com/user-attachments/assets/0c57c85b-5bc1-4d0d-906e-5fd48cd68360
+
 
 ---
 
