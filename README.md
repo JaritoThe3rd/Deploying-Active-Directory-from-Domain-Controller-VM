@@ -25,9 +25,16 @@ This guide walks through installing Active Directory on a Domain Controller VM (
 1. **RDP** into **DC-1** as `.\labuser`.
 2. Open **Server Manager** → **Add roles and features**.
 3. Select **Active Directory Domain Services** and install.
+
+https://github.com/user-attachments/assets/eb9078c7-bcf1-4e78-8c6c-b284b3762ba5
+   
 4. After installation, click the **flag** icon in Server Manager and choose **Promote this server to a domain controller**.
 5. Choose **Add a new forest**, set **Root domain name** to `mydomain.com` (or your preferred name).
 6. Complete the wizard and allow the server to **restart**.
+
+
+https://github.com/user-attachments/assets/ad78bfdf-86c6-423d-9f59-d9b56b2703fb
+
 
 ### 3. Create Domain Admin User
 1. After reboot, log in as `mydomain.com\labuser` (password: `Cyberlab123!`).
