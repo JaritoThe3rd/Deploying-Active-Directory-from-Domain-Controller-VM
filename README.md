@@ -68,6 +68,12 @@ https://github.com/user-attachments/assets/660ef55f-5f0b-4abe-9761-2f6fec993660
 
 > **Tip:** When you’re done for now, you can stop both VMs in the Azure Portal to save costs.
 
+
+
+https://github.com/user-attachments/assets/03589483-d9f0-4924-a55c-d1ef3efd5f9d
+
+
+
 ---
 
 ## Part 2 – Remote Desktop & Bulk User Creation
