@@ -50,6 +50,10 @@ https://github.com/user-attachments/assets/ad78bfdf-86c6-423d-9f59-d9b56b2703fb
    - Double-click `jane_admin` → **Member Of** tab → **Add…** → enter `Domain Admins`.
 7. Sign out, then **RDP** back into **DC-1** as `mydomain.com\jane_admin`.
 
+
+https://github.com/user-attachments/assets/660ef55f-5f0b-4abe-9761-2f6fec993660
+
+
 ### 4. Join Client-1 to the Domain
 1. Ensure **Client-1** DNS is pointed at **DC-1**’s private IP (already done).
 2. In the Azure Portal, restart **Client-1**.
